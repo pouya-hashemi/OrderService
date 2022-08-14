@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03792210-d1b5-4871-8d09-a850896aae79" name="Changes" comment="Domain Creation">
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Entities/Order.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Entities/OrderDetail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Entities/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Exceptions/BadRequestException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Interfaces/ISqlDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Managers/OrderManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beta.OrderService.Domain/Beta.OrderService.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Beta.OrderService.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beta.OrderService.Domain/Common/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Beta.OrderService.Domain/Common/EntityBase.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DM5SYM0yu0j1R5UAkpOjz8gPkF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03792210-d1b5-4871-8d09-a850896aae79" name="Changes" comment="" />
+      <created>1660496116468</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660496116468</updated>
+      <workItem from="1660496129355" duration="2480000" />
+    </task>
+    <task id="LOCAL‎۰۰۰۰۱" summary="Domain Creation">
+      <created>1660496221339</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۱" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۱" />
+      <updated>1660496221339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Domain Creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Domain Creation" />
+  </component>
+</project>
