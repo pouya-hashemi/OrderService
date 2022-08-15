@@ -14,7 +14,7 @@ public class OrderManager: IOrderManager
         _context = context;
     }
 
-    public async Task<Order> CreateOrder()
+    public async Task<Order> CreateOrderAsync()
     {
         var maxOrderNumber = await _context.Orders
             .OrderByDescending(o => o.OrderNumber)
@@ -26,12 +26,32 @@ public class OrderManager: IOrderManager
         var order = new Order(newOrderNumber);
         return order;
     }
-    public async Task OrderExists(long orderId)
+    public async Task OrderExistsAsync(long orderId)
     {
         var exists = await _context.Orders.AnyAsync(a => a.Id == orderId);
         if (!exists)
         {
             throw new NotFoundException("Order was not found");
         }
+    }
+
+    public async Task CanDeleteOrderAsync(Order order)
+    {
+        if (order == null)
+        {
+            throw new ArgumentNullException(nameof(order));
+        }
+        if (await OrderHasDetailsAsync(order.Id))
+        {
+            throw new BadRequestException("This order has items.Delete order items first please and try again later.");
+        }
+        
+    }
+    public async Task<bool> OrderHasDetailsAsync(long orderId)
+    {
+        return await _context.OrderDetails.AnyAsync(dtl => dtl.OrderId == orderId);
+        
+
+        
     }
 }

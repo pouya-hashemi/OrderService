@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Beta.OrderService.Domain.Interfaces
 {
-    internal interface IOrderManager
+    public interface IOrderManager
     {
-        Task<Order> CreateOrder();
-        Task OrderExists(long orderId);
+        Task<Order> CreateOrderAsync();
+        Task OrderExistsAsync(long orderId);
+        Task CanDeleteOrderAsync(Order order);
+        Task<bool> OrderHasDetailsAsync(long orderId);
     }
 }

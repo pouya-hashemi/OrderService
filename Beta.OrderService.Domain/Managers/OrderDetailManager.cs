@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Beta.OrderService.Domain.Managers
 {
-    internal class OrderDetailManager: IOrderDetailManager
+    public class OrderDetailManager: IOrderDetailManager
     {
         private readonly ISqlDbContext _context;
         private readonly IOrderManager _orderManager;
@@ -25,9 +25,9 @@ namespace Beta.OrderService.Domain.Managers
             this._productManager = productManager;
         }
 
-        public async Task<OrderDetail> CreateOrderDetail(long orderId,long productId,int quantity)
+        public async Task<OrderDetail> CreateOrderDetailAsync(long orderId,long productId,int quantity)
         {
-            await _orderManager.OrderExists(orderId);
+            await _orderManager.OrderExistsAsync(orderId);
             await _productManager.ProductExists(productId);
             await ProductExistsInOrder(orderId, productId);
 
@@ -37,7 +37,7 @@ namespace Beta.OrderService.Domain.Managers
 
         }
 
-        public async Task ProductExistsInOrder(long orderId,long productId)
+        public async Task ProductExistsInOrderAsync(long orderId,long productId)
         {
             var exists = await _context.OrderDetails.AnyAsync(a => a.OrderId == orderId && a.ProductId == productId);
             if (!exists)

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Beta.OrderService.Application\Beta.OrderService.Application.csproj" />
     <ProjectReference Include="..\Beta.OrderService.Domain\Beta.OrderService.Domain.csproj" />
   </ItemGroup>
 

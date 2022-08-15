@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Beta.OrderService.Domain.Managers
 {
-    internal class ProductManager: IProductManager
+    public class ProductManager: IProductManager
     {
         private readonly ISqlDbContext _context;
 
@@ -19,7 +19,7 @@ namespace Beta.OrderService.Domain.Managers
         }
 
 
-        public async Task ProductExists(long productId)
+        public async Task ProductExistsAsync(long productId)
         {
             var exists = await _context.Products.AnyAsync(a => a.Id == productId);
             if (!exists)

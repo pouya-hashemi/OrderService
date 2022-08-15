@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beta.OrderService.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta.OrderService.Infrastructure", "Beta.OrderService.Infrastructure\Beta.OrderService.Infrastructure.csproj", "{57E0A991-B7F9-4C38-BB5A-412428589308}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta.OrderService.Application", "Beta.OrderService.Application\Beta.OrderService.Application.csproj", "{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{57E0A991-B7F9-4C38-BB5A-412428589308}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57E0A991-B7F9-4C38-BB5A-412428589308}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57E0A991-B7F9-4C38-BB5A-412428589308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

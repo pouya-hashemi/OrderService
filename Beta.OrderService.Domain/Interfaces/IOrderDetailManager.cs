@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Beta.OrderService.Domain.Interfaces
 {
-    internal interface IOrderDetailManager
+    public interface IOrderDetailManager
     {
-        Task<OrderDetail> CreateOrderDetail(long orderId, long productId, int quantity);
-        Task ProductExistsInOrder(long orderId, long productId);
+        Task<OrderDetail> CreateOrderDetailAsync(long orderId, long productId, int quantity);
+        Task ProductExistsInOrderAsync(long orderId, long productId);
     }
 }
