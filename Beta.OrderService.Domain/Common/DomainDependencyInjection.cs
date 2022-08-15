@@ -11,7 +11,7 @@ namespace Beta.OrderService.Domain.Common
 {
     public static class DomainDependencyInjection
     {
-        public static IServiceCollection addDomainInjections(this IServiceCollection services)
+        public static IServiceCollection AddDomainInjections(this IServiceCollection services)
         {
             services.AddScoped<IProductManager, ProductManager>();
             services.AddScoped<IOrderManager, OrderManager>();

@@ -5,7 +5,9 @@ namespace Beta.OrderService.Domain.Interfaces;
 
 public interface ISqlDbContext
 {
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<OrderDetail> OrderDetails { get; set; }
-    public DbSet<Product> Products { get; set; }
+    DbSet<Order> Orders { get; set; }
+    DbSet<OrderDetail> OrderDetails { get; set; }
+    DbSet<Product> Products { get; set; }
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
