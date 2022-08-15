@@ -13,7 +13,7 @@ namespace Beta.OrderService.Infrastructure.Persistance.SqlServer.Configurations
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            builder.Property(p => p.OrderNumber).UseIdentityColumn(seed:100000);
+            
         }
     }
 }

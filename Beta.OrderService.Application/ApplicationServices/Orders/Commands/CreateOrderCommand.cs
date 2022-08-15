@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Beta.OrderService.Application.ApplicationServices.Orders.Commands
 {
-    internal class CreateOrderCommand:IRequest<OrderDto>
+    public class CreateOrderCommand:IRequest<OrderDto>
     {
     }
-    internal class CreateOrderHandler : IRequestHandler<CreateOrderCommand, OrderDto>
+    public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, OrderDto>
     {
         private readonly ISqlDbContext _context;
         private readonly IOrderManager _orderManager;

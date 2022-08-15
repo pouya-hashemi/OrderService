@@ -11,5 +11,6 @@ namespace Beta.OrderService.Domain.Interfaces
     {
         Task<OrderDetail> CreateOrderDetailAsync(long orderId, long productId, int quantity);
         Task ProductExistsInOrderAsync(long orderId, long productId);
+        void SetQuantity(OrderDetail orderDetail, int quantity);
     }
 }

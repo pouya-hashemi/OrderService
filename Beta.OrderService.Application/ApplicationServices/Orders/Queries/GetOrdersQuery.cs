@@ -15,6 +15,7 @@ namespace Beta.OrderService.Application.ApplicationServices.Orders.Queries
     {
         public int PageSize { get; set; }
         public int PageIndex { get; set; }
+        public long? OrderId { get; set; }
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
         public long? OrderNumber { get; set; }
@@ -47,6 +48,11 @@ namespace Beta.OrderService.Application.ApplicationServices.Orders.Queries
             if (request.OrderNumber != null)
             {
                 query = query.Where(w => w.OrderNumber == request.OrderNumber);
+            }
+            
+            if (request.OrderId != null)
+            {
+                query = query.Where(w => w.Id == request.OrderId);
             }
 
             var list = await query

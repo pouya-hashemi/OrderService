@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Beta.OrderService.Domain\Beta.OrderService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistance\SqlServer\Migrations" />
+  </ItemGroup>
+
 </Project>

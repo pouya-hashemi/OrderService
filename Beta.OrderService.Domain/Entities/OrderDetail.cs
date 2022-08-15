@@ -5,17 +5,18 @@ namespace Beta.OrderService.Domain.Entities;
 
 public class OrderDetail:EntityBase
 {
+    private OrderDetail(){}
     public OrderDetail(long orderId,long productId,int quantity)
     {
         this.OrderId = orderId;
         this.ProductId = productId;
-        this.Quantiy = ValidateQuantity(quantity);
+        this.Quantity = ValidateQuantity(quantity);
     }
     public long OrderId { get;private set; }
     public Order Order { get;private set; }
     public long ProductId { get;private set; }
     public Product Product { get;private set; }
-    public int Quantiy { get;private set; }
+    public int Quantity { get;private set; }
     
     private int ValidateQuantity(int quantity)
     {
@@ -27,9 +28,9 @@ public class OrderDetail:EntityBase
         return quantity;
     }
 
-    private void SetQuantity(int quantity)
+    internal void SetQuantity(int quantity)
     {
-        this.Quantiy = ValidateQuantity(quantity);
+        this.Quantity = ValidateQuantity(quantity);
     }
 
     

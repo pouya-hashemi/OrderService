@@ -28,8 +28,8 @@ namespace Beta.OrderService.Domain.Managers
         public async Task<OrderDetail> CreateOrderDetailAsync(long orderId,long productId,int quantity)
         {
             await _orderManager.OrderExistsAsync(orderId);
-            await _productManager.ProductExists(productId);
-            await ProductExistsInOrder(orderId, productId);
+            await _productManager.ProductExistsAsync(productId);
+            await ProductExistsInOrderAsync(orderId, productId);
 
             var orderDetail = new OrderDetail(orderId, productId, quantity);
 
@@ -40,10 +40,15 @@ namespace Beta.OrderService.Domain.Managers
         public async Task ProductExistsInOrderAsync(long orderId,long productId)
         {
             var exists = await _context.OrderDetails.AnyAsync(a => a.OrderId == orderId && a.ProductId == productId);
-            if (!exists)
+            if (exists)
             {
                 throw new BadRequestException("Product already exists in this order");
             }
+        }
+
+        public void SetQuantity(OrderDetail orderDetail, int quantity)
+        {
+            orderDetail.SetQuantity(quantity);
         }
         
     }

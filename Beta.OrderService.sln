@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta.OrderService.Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta.OrderService.Application", "Beta.OrderService.Application\Beta.OrderService.Application.csproj", "{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta.OrderService.WebApi", "Beta.OrderService.WebApi\Beta.OrderService.WebApi.csproj", "{9F350D86-F61D-4E33-9F56-2D64377CE0B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACED4800-F0C5-40C4-836A-CAB2D06D25C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F350D86-F61D-4E33-9F56-2D64377CE0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F350D86-F61D-4E33-9F56-2D64377CE0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F350D86-F61D-4E33-9F56-2D64377CE0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F350D86-F61D-4E33-9F56-2D64377CE0B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
