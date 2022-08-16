@@ -1,5 +1,6 @@
 ﻿using Beta.OrderService.Application.ApplicationServices.Products.Commands;
 using Beta.OrderService.Application.Interfaces;
+using MediatR;
 using Newtonsoft.Json;
 using RabbitMQ.Client.Events;
 using System;
@@ -12,7 +13,7 @@ namespace Beta.OrderService.Infrastructure.RabbitMq.ConsumerMessages
 {
     public class ProductCreateMessage : IRabbitMessageConsumer
     {
-        public ProductCreateMessage()
+        public ProductCreateMessage(ISender mediatorSender)
         {
 
             QueueName = "CreateProduct_OrderService";
@@ -23,6 +24,10 @@ namespace Beta.OrderService.Infrastructure.RabbitMq.ConsumerMessages
             {
                 var bodyString = Encoding.UTF8.GetString(e.Body.ToArray());
                 var createProductCommand = JsonConvert.DeserializeObject<CreateProductCommand>(bodyString);
+                if (createProductCommand != null)
+                {
+                    mediatorSender.Send(createProductCommand);
+                }
 
             };
         }
@@ -35,6 +40,6 @@ namespace Beta.OrderService.Infrastructure.RabbitMq.ConsumerMessages
         public string ExchangeType { get; private set; }
 
 
-        public async void 
+
     }
 }

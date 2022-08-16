@@ -22,7 +22,7 @@ namespace Beta.OrderService.Infrastructure.Common
             });
 
             services.AddScoped<ISqlDbContext, SqlDbContext>();
-            services.AddScoped<IRabbitMqConsumer, RabbitMqConsumer>();
+            services.AddSingleton<IRabbitMqConsumer, RabbitMqConsumer>();
 
 
             return services;

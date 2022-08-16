@@ -37,7 +37,7 @@ namespace Beta.OrderService.Infrastructure.RabbitMq
             consumer.Received += message.EventHandler;
 
             channel.QueueBind(message.QueueName, message.ExchangeName, String.Empty);
-            channel.BasicConsume(message.ExchangeName, true, consumer);
+            channel.BasicConsume(message.QueueName, true, consumer);
 
         }
         

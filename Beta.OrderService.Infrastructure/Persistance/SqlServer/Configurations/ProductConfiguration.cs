@@ -13,6 +13,7 @@ namespace Beta.OrderService.Infrastructure.Persistance.SqlServer.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
+            builder.Property(p=>p.Id).ValueGeneratedNever();
             builder.Property(p => p.Name).HasMaxLength(300);
         }
     }
