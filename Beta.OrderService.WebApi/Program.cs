@@ -16,6 +16,8 @@ builder.Services.AddDomainInjections();
 builder.Services.AddApplicationInjections();
 builder.Services.AddInferastructureInjections(builder.Configuration);
 
+builder.Services.AddHostedService<RabbitMqSubscriber>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,5 +1,7 @@
-﻿using Beta.OrderService.Domain.Interfaces;
+﻿using Beta.OrderService.Application.Interfaces;
+using Beta.OrderService.Domain.Interfaces;
 using Beta.OrderService.Infrastructure.Persistance.SqlServer;
+using Beta.OrderService.Infrastructure.RabbitMq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,7 @@ namespace Beta.OrderService.Infrastructure.Common
             });
 
             services.AddScoped<ISqlDbContext, SqlDbContext>();
+            services.AddScoped<IRabbitMqConsumer, RabbitMqConsumer>();
 
 
             return services;
