@@ -20,9 +20,13 @@ namespace Beta.OrderService.Infrastructure.Common
             services.AddDbContext<SqlDbContext>(options => {
                 options.UseSqlServer(configuration.GetConnectionString("SqlConnection"));
             });
-
+           
+            
             services.AddScoped<ISqlDbContext, SqlDbContext>();
+            services.AddSingleton<IRabbitMqConnectionProvider, RabbitMqConnectionProvider>();
             services.AddSingleton<IRabbitMqConsumer, RabbitMqConsumer>();
+
+
 
 
             return services;

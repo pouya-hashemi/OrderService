@@ -1,6 +1,7 @@
 ﻿using Beta.OrderService.Application.ApplicationServices.Products.Commands;
 using Beta.OrderService.Application.Interfaces;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using RabbitMQ.Client.Events;
 using System;
@@ -13,20 +14,31 @@ namespace Beta.OrderService.Infrastructure.RabbitMq.ConsumerMessages
 {
     public class ProductCreateMessage : IRabbitMessageConsumer
     {
-        public ProductCreateMessage(ISender mediatorSender)
+        public ProductCreateMessage(IServiceProvider serviceProvider)
         {
+            
 
             QueueName = "CreateProduct_OrderService";
             ExchangeName = "CreateProduct";
             ExchangeType = RabbitMQ.Client.ExchangeType.Fanout;
 
-            this.EventHandler = (sender, e) =>
+            this.EventHandler =async (sender, e) =>
             {
+
+                
                 var bodyString = Encoding.UTF8.GetString(e.Body.ToArray());
+
                 var createProductCommand = JsonConvert.DeserializeObject<CreateProductCommand>(bodyString);
                 if (createProductCommand != null)
                 {
-                    mediatorSender.Send(createProductCommand);
+                    using (var scope = serviceProvider.CreateScope())
+                    {
+                        var mediatorSender =
+                            scope.ServiceProvider
+                                .GetRequiredService<ISender>();
+                        await mediatorSender.Send(createProductCommand);
+                    }
+                    
                 }
 
             };

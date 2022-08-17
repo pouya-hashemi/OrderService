@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddDomainInjections();
 builder.Services.AddApplicationInjections();
 builder.Services.AddInferastructureInjections(builder.Configuration);

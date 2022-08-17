@@ -1,25 +1,27 @@
-﻿using Beta.OrderService.Application.Interfaces;
+﻿using Beta.OrderService.Application.ApplicationServices.Products.Commands;
+using Beta.OrderService.Application.Interfaces;
 using Beta.OrderService.Infrastructure.RabbitMq.ConsumerMessages;
 using MediatR;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
 namespace Beta.OrderService.WebApi.Common
 {
     public class RabbitMqSubscriber : IHostedService
     {
-        private readonly IRabbitMqConsumer _consumer;
-        private readonly ISender sender;
+        private readonly IRabbitMqConsumer _rabbitMqConsumer;
+        private readonly IServiceProvider _serviceProvider;
 
-        public RabbitMqSubscriber(IRabbitMqConsumer consumer,
-            ISender sender)
+        public RabbitMqSubscriber(IRabbitMqConsumer rabbitMqConsumer,
+            IServiceProvider serviceProvider)
         {
-            this._consumer = consumer;
-            this.sender = sender;
+            this._rabbitMqConsumer = rabbitMqConsumer;
+            this._serviceProvider = serviceProvider;
         }
 
-        public Task StartAsync(CancellationToken cancellationToken)
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
-            _consumer.Consume(new ProductCreateMessage(sender));
-            return Task.CompletedTask;
+            _rabbitMqConsumer.Consume(new ProductCreateMessage(_serviceProvider));
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

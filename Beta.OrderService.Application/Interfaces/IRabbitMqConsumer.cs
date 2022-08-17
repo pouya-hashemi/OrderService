@@ -8,7 +8,7 @@ namespace Beta.OrderService.Application.Interfaces
 {
     public interface IRabbitMqConsumer
     {
-        public void Consume<T>(T message)
+        void Consume<T>(T message)
                    where T : IRabbitMessageConsumer;
     }
 }

@@ -23,7 +23,6 @@ namespace Beta.OrderService.Application.ApplicationServices.Products.Commands
         }
         public async Task<Unit> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            Console.WriteLine("--> inside handler");
             _context.Products.Add(new Domain.Entities.Product()
             {
                 Id = request.Id,

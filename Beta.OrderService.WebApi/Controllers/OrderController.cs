@@ -1,6 +1,7 @@
 using Beta.OrderService.Application.ApplicationServices.OrderDetails.Commands;
 using Beta.OrderService.Application.ApplicationServices.Orders.Commands;
 using Beta.OrderService.Application.ApplicationServices.Orders.Queries;
+using Beta.OrderService.Application.ApplicationServices.Products.Commands;
 using Beta.OrderService.Application.Common;
 using Beta.OrderService.Application.Dtos;
 using MediatR;
